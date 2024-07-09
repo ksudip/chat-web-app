@@ -28,6 +28,7 @@ export const signup = async (req,res)=>{
             gender,
             profilePic: gender==="male"?boyProfilePic: girlProfilePic
         })
+        
         if(newUser){
             // generate token
             generateTokenAndSetCookie(newUser._id,res);
@@ -39,6 +40,7 @@ export const signup = async (req,res)=>{
                 username: newUser.username,
                 profilePic: newUser.profilePic
             });
+            
         }
         else{
             res.status(400).json({error: "error in creating user"});
@@ -50,7 +52,7 @@ export const signup = async (req,res)=>{
         
     }
 
-    console.log("signup user");
+    
 }
 export const login = async (req,res)=>{
     try {

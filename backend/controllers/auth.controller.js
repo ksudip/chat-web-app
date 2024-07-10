@@ -78,7 +78,7 @@ export const login = async (req,res)=>{
         res.status(400).json({error: "internal srver error from login"});
         
     }
-    console.log("login user");
+    console.log("login successful");
 }
 export const logout = async (req,res)=>{
     try {

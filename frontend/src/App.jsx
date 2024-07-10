@@ -7,7 +7,7 @@ import SignUp from './pages/signup/SignUp';
 import { useAuthContext } from './context/AuthContext';
 function App() {
   const {authUser} = useAuthContext();
-  return <div className='p-4 flex items-center justify-center h-screen'>
+  return (<div className='flex items-center justify-center h-screen'>
     <Routes>
       <Route path='/' element= {authUser ? <Home />: <Navigate to='/login' />} /> 
       <Route path='/login' element= {authUser ? <Navigate to='/' /> : <Login />} />
@@ -15,7 +15,7 @@ function App() {
     </Routes>
     <div><Toaster/></div>
 
-  </div>
+  </div>)
   
 }
 export default App
